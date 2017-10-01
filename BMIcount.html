@@ -10,14 +10,25 @@
     <span>体重(kg)：</span>
     <input id="weight" type="text" name="weight">
     <input id="inquire" type="submit" name="text" value="查询BMI指数">
-    <p>您的BMI指数为：<span id="result"></span></p>
+    <p>您的BMI指数为：<span id="result"></span><span id="result-text"></span></p>
     <script type="text/javascript">
-         var myBMI="";
+        var myBMI="";
         document.getElementById('inquire').onclick=function bmi() {
             var myHeight=document.getElementById('height').value;
                 myWeight=document.getElementById('weight').value;
                 myBMI=myWeight/Math.pow(myHeight,2);
-            document.getElementById('result').innerHTML=myBMI.toFixed(2);
+            document.getElementById('result').innerHTML=myBMI.toFixed(2)+ "&nbsp";
+            if (myBMI<18.5) {
+                document.getElementById('result-text').innerHTML="过轻！";
+            }else if (myBMI>18.5&&myBMI<25) {
+                document.getElementById('result-text').innerHTML="正常";
+            }else if (myBMI>25&&myBMI<28) {
+                document.getElementById('result-text').innerHTML="过重！";
+            }else if (myBMI>28&&myBMI<32) {
+                document.getElementById('result-text').innerHTML="肥胖！！";
+            }else{
+                document.getElementById('result-text').innerHTML="严重肥胖！！！";
+            }
         }   
     </script>
 </body>
