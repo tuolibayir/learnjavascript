@@ -12,11 +12,11 @@
     <input id="inquire" type="submit" name="text" value="查询BMI指数">
     <p>您的BMI指数为：<span id="result"></span></p>
     <script type="text/javascript">
-        var myHeight=document.getElementById('height').value;
-            myWeight=document.getElementById('weight').value;
-            myBMI="";
+         var myBMI="";
         document.getElementById('inquire').onclick=function bmi() {
-            myBMI=myWeight/Math.pow(myHeight,2);
+            var myHeight=document.getElementById('height').value;
+                myWeight=document.getElementById('weight').value;
+                myBMI=myWeight/Math.pow(myHeight,2);
             document.getElementById('result').innerHTML=myBMI.toFixed(2);
         }   
     </script>
