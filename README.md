@@ -1,1 +1,2 @@
 # learnjavascript
+学习JavaScript中的一些练习小Demo。
